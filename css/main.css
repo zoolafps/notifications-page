@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+/* ESTILOS GLOBALES */
+:root{
+/* Primary */
+
+--Red: hsl(1, 90%, 64%);
+--Blue: hsl(219, 85%, 26%);
+
+/* Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Very-light-grayish-blue: hsl(210, 60%, 98%);
+--Light-grayish-blue-1: hsl(211, 68%, 94%);
+--Light-grayish-blue-2: hsl(205, 33%, 90%);
+--Grayish-blue: hsl(219, 14%, 63%);
+--Dark-grayish-blue: hsl(219, 12%, 42%);
+--Very-dark-blue: hsl(224, 21%, 14%);
+}
+*, body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--Light-grayish-blue-1);
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+/* UTILIDADES */
+.dn{ /* oculta elementos desde javascript */
+    display: none;
+}
+
+#loading{ /* animacion de carga */
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--Dark-grayish-blue);
+    border-top: 4px solid var(--Blue);
+    border-radius: 50%;
+    animation: load 3s infinite;
+}
+@keyframes load {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(361deg);
+    }
+}
+
+
+.main__container{
+    margin: 40px auto;
+    padding: 25px;
+    max-width: 800px;
+    width: 80%;
+    background: var(--Very-light-grayish-blue);
+    border-radius: 20px;
+}
+
+.navigation{
+    margin: 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.navigation .header #counter{
+    padding: 5px 8px;
+    text-align: center;
+    background: var(--Blue);
+    border-radius: 6px;
+    color: var(--White);
+}
+.navigation #clearBtn{
+    color: var(--Dark-grayish-blue);
+}
+.navigation #clearBtn:hover{
+    cursor: pointer;
+    color: var(--Blue);
+}
+
+#cards{
+    /* contiene las notificaciones */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#cards .card{/* notificaciones */
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+#cards .card.un-read{/* notificaciones sin revisar */
+    background: var(--Light-grayish-blue-1);
+}
+#cards .card img.avatar{/* foto de perfil */
+    margin: 0 20px auto 0;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#cards .card .wrapper{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+#cards .card .wrapper .inf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#cards .card .wrapper .inf div .user a{
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--Very-dark-blue);
+}
+#cards .card .wrapper .inf div .user a:hover{
+    cursor: pointer;
+    color: var(--Blue);
+}
+#cards .card .wrapper .inf div .action{
+    color: var(--Grayish-blue);
+}
+#cards .card .wrapper .inf div .status{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: var(--Red);
+    border-radius: 50%;
+}
+#cards .card .wrapper .inf div .post a{
+    font-weight: 400;
+    color: var(--Dark-grayish-blue);
+    text-decoration: none;
+}
+#cards .card .wrapper .inf div .post a:hover{
+    cursor: pointer;
+    color: var(--Blue);
+}
+#cards .card .wrapper .inf .time{
+    font-weight: 400;
+    color: var(--Grayish-blue);
+}
+#cards .card .wrapper .inf .message{
+    margin: 10px 0px;
+    padding: 5px 8px 5px 5px;
+    width: 100%;
+    height: fit-content;
+    border: 3px solid var(--Light-grayish-blue-2);
+    border-radius: 5px;
+    color: var(--Grayish-blue);
+}
+#cards .card .wrapper .inf .message:hover{
+    cursor: pointer; 
+    background: var(--Light-grayish-blue-2);
+    transition: .3s;
+}
+#cards .card .wrapper .inf .message a{
+    text-decoration: none;
+}
+#cards .card .wrapper .img_box{
+    margin: auto 0px 0px auto;
+    padding: 3px;
+}
+#cards .card .wrapper .img_box a img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+#cards .card .wrapper .img_box a img:hover{
+    transition: .3s;
+    border: 3px solid var(--Light-grayish-blue-2);
+}
+
+@media (max-width: 500px) {
+    .main__container{
+        margin: 0;
+        padding: 25px;
+        width: 100%;
+        background: var(--Very-light-grayish-blue);
+        border-radius: unset;
+    }
+}
